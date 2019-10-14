@@ -1,0 +1,92 @@
+@import (reference) "var";
+
+.fontSize(@className, @size) {
+  .font-@{className} {
+    font-size: @size;
+  }
+}
+
+.fontSize(xs, @font-size-xs);
+.fontSize(sm, @font-size-sm);
+.fontSize(md, @font-size-md);
+.fontSize(lg, @font-size-lg);
+
+.font-bold {
+  font-weight: @font-weight-bold;
+}
+
+.padding(@className, @size) {
+  .pa-@{className} {
+    padding: @size;
+  }
+  .pl-@{className} {
+    padding-left: @size;
+  }
+  .pt-@{className} {
+    padding-top: @size;
+  }
+  .pr-@{className} {
+    padding-right: @size;
+  }
+  .pb-@{className} {
+    padding-bottom: @size;
+  }
+}
+
+.padding(base, @padding-base);
+.padding(xs, @padding-xs);
+.padding(sm, @padding-sm);
+.padding(md, @padding-md);
+.padding(lg, @padding-lg);
+.padding(xl, @padding-xl);
+
+.margin(@className, @size) {
+  .ma-@{className} {
+    margin: @size;
+  }
+  .ml-@{className} {
+    margin-left: @size;
+  }
+  .mt-@{className} {
+    margin-top: @size;
+  }
+  .mr-@{className} {
+    margin-right: @size;
+  }
+  .mb-@{className} {
+    margin-bottom: @size;
+  }
+}
+
+.margin(base, @padding-base);
+.margin(xs, @padding-xs);
+.margin(sm, @padding-sm);
+.margin(md, @padding-md);
+.margin(lg, @padding-lg);
+.margin(xl, @padding-xl);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

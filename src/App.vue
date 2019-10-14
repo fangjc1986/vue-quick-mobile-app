@@ -1,29 +1,48 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <index-page/>
+        <transition :name="$store.state.app.animate.pageAnimateClass">
+            <keep-alive>
+                <router-view class="page-view"></router-view>
+            </keep-alive>
+        </transition>
     </div>
 </template>
 
 <script>
 
     import IndexPage from "./pages/index/IndexPage";
+    import {mapState} from "vuex";
 
     export default {
         name: 'app',
         components: {
             IndexPage,
-        }
+        },
+        props: {},
+
+        data() {
+            return {}
+        },
+
+        computed: {},
+
+        watch: {},
+
+        created() {
+        },
+
+        mounted() {
+        },
+
+        destroyed() {
+        },
+
+        methods: {}
     }
 </script>
 
-<style>
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
+<style lang="less">
+    @import "~@/assets/css/common";
+    @import "~@/assets/css/animate";
+    @import "~@/assets/css/reset";
 </style>

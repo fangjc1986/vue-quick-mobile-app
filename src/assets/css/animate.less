@@ -1,0 +1,59 @@
+// 页面切换 - 单边切换
+.slide-right-leave-active {
+  transform: translate(100%, 0);
+  z-index: 1000 !important;
+}
+
+.slide-left-enter {
+  transform: translate(100%, 0);
+  z-index: 1000 !important;
+}
+
+.slide-left-enter-active, .slide-left-enter-to {
+  z-index: 1000 !important;
+}
+
+.slide-left-leave-active {
+  z-index: 0;
+}
+
+
+// 页面切换 - 全体移动 切换
+.slide-all-right-leave,
+.slide-all-right-leave-active,
+.slide-all-left-enter {
+  transform: translate(130%, 0);
+}
+
+.slide-all-right-enter,
+.slide-all-left-leave,
+.slide-all-left-leave-active {
+  transform: translate(-130%, 0);
+}
+
+// 路由过度动画容器
+// 页面过度
+.page-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  @speed: .4s;
+  background-color: #fff;
+  transition: all @speed ease;
+}
+
+// 局部过度
+.route-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  @speed: .4s;
+  transition: all @speed ease;
+  -webkit-transition: all @speed ease;
+  -moz-transition: all @speed ease;
+}
+
+// 自定义动画 -

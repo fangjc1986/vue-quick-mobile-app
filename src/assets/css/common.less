@@ -1,0 +1,122 @@
+@import "font-pad-mar";
+@import "color";
+
+// flex 布局
+.flex-box {
+  display: flex;
+
+  &.flex-end {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &.flex-column {
+    flex-direction: column;
+  }
+
+  &.same-width {
+    > * {
+      width: 0;
+      flex-grow: 1;
+    }
+  }
+
+  &.flex-center {
+    align-content: center;
+    align-items: center;
+  }
+
+  &.flex-center-j {
+    justify-content: center;
+    justify-items: center;
+  }
+
+  &.flex-center-all {
+    .flex-center;
+    .flex-center-j;
+  }
+
+  > * {
+    &.flex-grow {
+      flex-grow: 1;
+    }
+
+    &.flex-grow-off {
+      flex-grow: 0;
+    }
+
+    &.flex-shrink {
+      flex-shrink: 1;
+    }
+
+    &.flex-shrink-off {
+      flex-shrink: 0;
+    }
+  }
+}
+
+// 宽高
+.w100p {
+  width: 100% !important;
+}
+
+.h100p {
+  height: 100% !important;
+}
+
+.wh100p {
+  .w100p;
+  .h100p;
+}
+
+// postion & display
+.pos-a {
+  position: absolute !important;
+}
+
+.pos-r {
+  position: relative !important;
+}
+
+.pos-f {
+  position: fixed !important;
+}
+
+.disp-n {
+  display: none !important;
+}
+
+.disp-ib {
+  display: inline-block !important;
+}
+
+.disp-i {
+  display: inline !important;
+}
+
+.disp-b {
+  display: block !important;
+}
+
+// 文本位置
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+// 隐藏
+.overflow-h{
+  overflow: hidden;
+}
+.overflow-x-h{
+  overflow-x: hidden;
+}
+.overflow-y-h{
+  overflow-y: hidden;
+}

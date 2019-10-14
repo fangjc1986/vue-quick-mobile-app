@@ -1,0 +1,196 @@
+.font-xs {
+  font-size: 10px;
+}
+.font-sm {
+  font-size: 12px;
+}
+.font-md {
+  font-size: 14px;
+}
+.font-lg {
+  font-size: 16px;
+}
+.font-bold {
+  font-weight: 500;
+}
+.pa-base {
+  padding: 4px;
+}
+.pl-base {
+  padding-left: 4px;
+}
+.pt-base {
+  padding-top: 4px;
+}
+.pr-base {
+  padding-right: 4px;
+}
+.pb-base {
+  padding-bottom: 4px;
+}
+.pa-xs {
+  padding: 8px;
+}
+.pl-xs {
+  padding-left: 8px;
+}
+.pt-xs {
+  padding-top: 8px;
+}
+.pr-xs {
+  padding-right: 8px;
+}
+.pb-xs {
+  padding-bottom: 8px;
+}
+.pa-sm {
+  padding: 12px;
+}
+.pl-sm {
+  padding-left: 12px;
+}
+.pt-sm {
+  padding-top: 12px;
+}
+.pr-sm {
+  padding-right: 12px;
+}
+.pb-sm {
+  padding-bottom: 12px;
+}
+.pa-md {
+  padding: 16px;
+}
+.pl-md {
+  padding-left: 16px;
+}
+.pt-md {
+  padding-top: 16px;
+}
+.pr-md {
+  padding-right: 16px;
+}
+.pb-md {
+  padding-bottom: 16px;
+}
+.pa-lg {
+  padding: 24px;
+}
+.pl-lg {
+  padding-left: 24px;
+}
+.pt-lg {
+  padding-top: 24px;
+}
+.pr-lg {
+  padding-right: 24px;
+}
+.pb-lg {
+  padding-bottom: 24px;
+}
+.pa-xl {
+  padding: 32px;
+}
+.pl-xl {
+  padding-left: 32px;
+}
+.pt-xl {
+  padding-top: 32px;
+}
+.pr-xl {
+  padding-right: 32px;
+}
+.pb-xl {
+  padding-bottom: 32px;
+}
+.ma-base {
+  margin: 4px;
+}
+.ml-base {
+  margin-left: 4px;
+}
+.mt-base {
+  margin-top: 4px;
+}
+.mr-base {
+  margin-right: 4px;
+}
+.mb-base {
+  margin-bottom: 4px;
+}
+.ma-xs {
+  margin: 8px;
+}
+.ml-xs {
+  margin-left: 8px;
+}
+.mt-xs {
+  margin-top: 8px;
+}
+.mr-xs {
+  margin-right: 8px;
+}
+.mb-xs {
+  margin-bottom: 8px;
+}
+.ma-sm {
+  margin: 12px;
+}
+.ml-sm {
+  margin-left: 12px;
+}
+.mt-sm {
+  margin-top: 12px;
+}
+.mr-sm {
+  margin-right: 12px;
+}
+.mb-sm {
+  margin-bottom: 12px;
+}
+.ma-md {
+  margin: 16px;
+}
+.ml-md {
+  margin-left: 16px;
+}
+.mt-md {
+  margin-top: 16px;
+}
+.mr-md {
+  margin-right: 16px;
+}
+.mb-md {
+  margin-bottom: 16px;
+}
+.ma-lg {
+  margin: 24px;
+}
+.ml-lg {
+  margin-left: 24px;
+}
+.mt-lg {
+  margin-top: 24px;
+}
+.mr-lg {
+  margin-right: 24px;
+}
+.mb-lg {
+  margin-bottom: 24px;
+}
+.ma-xl {
+  margin: 32px;
+}
+.ml-xl {
+  margin-left: 32px;
+}
+.mt-xl {
+  margin-top: 32px;
+}
+.mr-xl {
+  margin-right: 32px;
+}
+.mb-xl {
+  margin-bottom: 32px;
+}
+/*# sourceMappingURL=font-pad-mar.css.map */
