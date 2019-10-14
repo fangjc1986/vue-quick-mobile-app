@@ -8,13 +8,14 @@ export default {
      * @param params
      */
     push(path, params = {}) {
-        if (path instanceof String) {
+        if (typeof path === 'string') {
             route_vendor.router.push({
                 path: path,
                 query: params
             })
+        } else {
+            route_vendor.router.push(path);
         }
-        route_vendor.router.push(path);
     },
     /**
      * 跳转到新的页面

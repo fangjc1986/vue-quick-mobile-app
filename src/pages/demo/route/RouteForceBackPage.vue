@@ -1,21 +1,23 @@
 <template>
-    <div class="RouteBackParams">
+    <div class="RouteForceBackPage">
         <page-layout>
             <van-nav-bar
+                    title="带参数跳转"
                     :left-arrow="true"
-                    slot="head"
-                    title="带参数返回并执行函数"
                     @click-left="v_router.back()"
             ></van-nav-bar>
             <scroll-box-vant>
-                <cell-group-titles>返回文本信息到上一页</cell-group-titles>
-                <van-field v-model="demo1" placeholder="请输入返回信息">
-                    <van-button
-                            slot="button" size="small" type="primary"
-                            @click="v_router.backEvent(demo1)"
-                    >返回执行默认backEvent事件
-                    </van-button>
-                </van-field>
+                <cell-group-titles>跳转</cell-group-titles>
+                <van-cell
+                        title="跳转下一页"
+                        is-link
+                        @click="v_router.to('/route/RouteBackParamsPage')"
+                ></van-cell>
+                <van-cell
+                        title="是否重置返回事件"
+                >
+                    <van-switch v-model="p_force_back_reset_route" size="24px"></van-switch>
+                </van-cell>
             </scroll-box-vant>
         </page-layout>
     </div>
@@ -25,15 +27,17 @@
     import PageLayout from "../../../components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "../../../components/scroll-box/ScrollBoxVant";
     import CellGroupTitles from "../../../components/titles/CellGroupTitles";
+    import ReloadMixin from "../../../vendor/mixin/ReloadMixin";
 
     export default {
-        name: "RouteBackParams",
-        mixins: [],
+        name: "RouteForceBackPage",
+        mixins: [ReloadMixin],
         components: {CellGroupTitles, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {
-                demo1: '',
+                p_force_back: true,
+                p_force_back_reset_route: false,
             }
         },
         computed: {},
@@ -55,6 +59,6 @@
 <style lang="less" scoped>
     @import "~@/assets/css/var";
 
-    .RouteBackParams {
+    .RouteForceBackPage {
     }
 </style>

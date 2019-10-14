@@ -10,11 +10,5 @@ export default [
             title: '首页'
         }
     },
-    {
-        path: '/route/RouteBackParamsPage',
-        component: _import('demo/route/RouteBackParamsPage.vue'),
-        meta: {
-            title: '首页'
-        }
-    },
+
 ]

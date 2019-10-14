@@ -13,8 +13,7 @@ export default {
     },
     activated() {
         this.v_route_status = Object.assign({}, route_vendor.routeStatus);
-        console.log( this.v_route_status);
-        if (this.p_force_back) {
+        if (this.p_force_back && this.v_route_status.isBack) {
             if (this.p_force_back_reset_route) {
                 route_vendor.resetRouteStatusInfo();
             }

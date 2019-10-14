@@ -22,9 +22,9 @@ export default {
         }
     },
     activated() {
-        if (this.p_force_back) return;
         this.$nextTick(() => {
             let routeStatus = this.v_route_status;
+            if (this.p_force_back && !routeStatus.isBack) return;
             // 进入 是否刷新
             if (!routeStatus.isBack || this.r_force_reload) {
                 this.r_delay_timeout = setTimeout(() => {

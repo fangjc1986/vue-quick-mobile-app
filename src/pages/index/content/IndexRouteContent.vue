@@ -12,8 +12,12 @@
                     >带参数返回
                     </van-cell>
                     <van-cell :is-link="true"
-                              @click="v_router.to('/route/RouteBackParamsPage')"
+                              @click="v_router.to('/route/RouteQueryParamsPage', demo1)"
                     >带参数跳转
+                    </van-cell>
+                    <van-cell :is-link="true"
+                              @click="v_router.to('/route/RouteForceBackPage', demo1)"
+                    >返回不显示（返回载入后强制再次返回）
                     </van-cell>
                 </van-cell-group>
             </scroll-box-vant>
@@ -32,7 +36,12 @@
         components: {ScrollBoxVant, PageLayout},
         props: {},
         data() {
-            return {}
+            return {
+                demo1: {
+                    'id': 123,
+                    'name': '哈哈'
+                }
+            }
         },
         computed: {},
         watch: {},
