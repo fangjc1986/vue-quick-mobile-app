@@ -44,6 +44,9 @@
         },
         destroyed() {
         },
+        activated() {
+            this.demo1 = '';
+        },
         methods: {
             reload() {
             },
