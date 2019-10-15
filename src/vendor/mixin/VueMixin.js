@@ -22,7 +22,7 @@ export default {
     deactivated() {
     },
     beforeDestroy() {
-        this.deactivated();
+        this.deactivated && this.deactivated();
     },
     mounted() {
 

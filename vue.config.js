@@ -11,7 +11,7 @@ module.exports = {
         loaderOptions: {
             less: {
                 modifyVars: {
-                    // 使用自定义主题样式
+                    // 使用Vant自定义主题样式
                     'hack': `true; @import "${resolve('src/assets/css/vant-theme.less')}";`
                 }
             },
@@ -21,12 +21,9 @@ module.exports = {
                 ]
             }
         },
-
     },
     chainWebpack: (config) => {
         config.resolve.alias
             .set('@', resolve('src'))
-            .set('image', resolve('src/image'))
-            .set('style', resolve('src/style'))
     },
 };

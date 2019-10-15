@@ -42,7 +42,6 @@ export default {
                 // 返回事件
                 if (routeStatus.backEvent) {
                     let eventName = routeStatus.backEvent === true ? 'backEvent' : routeStatus.backEvent;
-                    console.log(eventName);
                     if (this[eventName]) {
                         this.r_back_event_timeout = setTimeout(() => {
                             this[eventName](routeStatus.backEventParams);

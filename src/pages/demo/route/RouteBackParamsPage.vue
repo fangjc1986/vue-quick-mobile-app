@@ -15,7 +15,28 @@
                             @click="v_router.backEvent(demo1)"
                     >返回执行默认backEvent事件
                     </van-button>
+
                 </van-field>
+                <van-field v-model="demo2" placeholder="请输入返回信息">
+                    <van-button
+                            slot="button" size="small" type="primary"
+                            @click="v_router.backEvent(demo2,'customEvent')"
+                    >返回执行customEvent事件
+                    </van-button>
+
+                </van-field>
+
+                <div class="pa-md color-gray-darker">
+
+                    返回传参一般使用在选择页面上，比如选择收货地址等。 <br>
+                    <br>
+                    返回按钮事件：<br>
+                    调用 this.v_router.backEvent(返回参数，事件名称，是否重置其他参数); <br>
+                    <br>
+                    返回参数：可以是任意形式； <br>
+                    事件名称：返回到上一页的 method 中的方法名；<br>
+                    是否重置参数：是否将除了本次设置以外的其他返回路由参数重置；（默认不重置）；<br>
+                </div>
             </scroll-box-vant>
         </page-layout>
     </div>
@@ -34,6 +55,7 @@
         data() {
             return {
                 demo1: '',
+                demo2: '',
             }
         },
         computed: {},

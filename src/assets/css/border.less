@@ -1,0 +1,33 @@
+@import (reference) "var";
+
+.border(@className, @color) {
+  @borderWeight: .02rem;
+  .border-@{className} {
+    border: @borderWeight solid @color;
+  }
+  .border-t-@{className} {
+    border-top: @borderWeight solid @color;
+  }
+  .border-r-@{className} {
+    border-right: @borderWeight solid @color;
+  }
+  .border-b-@{className} {
+    border-bottom: @borderWeight solid @color;
+  }
+  .border-l-@{className} {
+    border-left: @borderWeight solid @color;
+  }
+}
+
+.border(back, @black);
+.border(white, @white);
+.border(danger, @red);
+.border(primary, @green);
+.border(info, @blue);
+.border(warning, @orange);
+.border(warning-light, @orange-light);
+.border(warning-dark, @orange-dark);
+.border(~"gray", @gray);
+.border(~"gray-light", @gray-light);
+.border(~"gray-dark", @gray-dark);
+.border(~"gray-darker", @gray-darker);

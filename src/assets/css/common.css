@@ -235,10 +235,10 @@
 .bg-waring-light {
   background-color: #fffbe8;
 }
-.color-gray light {
+.color-gray-light {
   color: #e5e5e5;
 }
-.bg-gray light {
+.bg-gray-light {
   background-color: #e5e5e5;
 }
 .color-primary {
@@ -253,17 +253,197 @@
 .bg-gray {
   background-color: #c8c9cc;
 }
-.color-gray darker {
+.color-gray-darker {
   color: #7d7e80;
 }
-.bg-gray darker {
+.bg-gray-darker {
   background-color: #7d7e80;
 }
-.color-gray dark {
+.color-gray-dark {
   color: #969799;
 }
-.bg-gray dark {
+.bg-gray-dark {
   background-color: #969799;
+}
+.border-back {
+  border: 0.02rem solid #000;
+}
+.border-t-back {
+  border-top: 0.02rem solid #000;
+}
+.border-r-back {
+  border-right: 0.02rem solid #000;
+}
+.border-b-back {
+  border-bottom: 0.02rem solid #000;
+}
+.border-l-back {
+  border-left: 0.02rem solid #000;
+}
+.border-white {
+  border: 0.02rem solid #fff;
+}
+.border-t-white {
+  border-top: 0.02rem solid #fff;
+}
+.border-r-white {
+  border-right: 0.02rem solid #fff;
+}
+.border-b-white {
+  border-bottom: 0.02rem solid #fff;
+}
+.border-l-white {
+  border-left: 0.02rem solid #fff;
+}
+.border-danger {
+  border: 0.02rem solid #ee0a24;
+}
+.border-t-danger {
+  border-top: 0.02rem solid #ee0a24;
+}
+.border-r-danger {
+  border-right: 0.02rem solid #ee0a24;
+}
+.border-b-danger {
+  border-bottom: 0.02rem solid #ee0a24;
+}
+.border-l-danger {
+  border-left: 0.02rem solid #ee0a24;
+}
+.border-primary {
+  border: 0.02rem solid #07c160;
+}
+.border-t-primary {
+  border-top: 0.02rem solid #07c160;
+}
+.border-r-primary {
+  border-right: 0.02rem solid #07c160;
+}
+.border-b-primary {
+  border-bottom: 0.02rem solid #07c160;
+}
+.border-l-primary {
+  border-left: 0.02rem solid #07c160;
+}
+.border-info {
+  border: 0.02rem solid #1989fa;
+}
+.border-t-info {
+  border-top: 0.02rem solid #1989fa;
+}
+.border-r-info {
+  border-right: 0.02rem solid #1989fa;
+}
+.border-b-info {
+  border-bottom: 0.02rem solid #1989fa;
+}
+.border-l-info {
+  border-left: 0.02rem solid #1989fa;
+}
+.border-warning {
+  border: 0.02rem solid #ff976a;
+}
+.border-t-warning {
+  border-top: 0.02rem solid #ff976a;
+}
+.border-r-warning {
+  border-right: 0.02rem solid #ff976a;
+}
+.border-b-warning {
+  border-bottom: 0.02rem solid #ff976a;
+}
+.border-l-warning {
+  border-left: 0.02rem solid #ff976a;
+}
+.border-warning-light {
+  border: 0.02rem solid #fffbe8;
+}
+.border-t-warning-light {
+  border-top: 0.02rem solid #fffbe8;
+}
+.border-r-warning-light {
+  border-right: 0.02rem solid #fffbe8;
+}
+.border-b-warning-light {
+  border-bottom: 0.02rem solid #fffbe8;
+}
+.border-l-warning-light {
+  border-left: 0.02rem solid #fffbe8;
+}
+.border-warning-dark {
+  border: 0.02rem solid #ed6a0c;
+}
+.border-t-warning-dark {
+  border-top: 0.02rem solid #ed6a0c;
+}
+.border-r-warning-dark {
+  border-right: 0.02rem solid #ed6a0c;
+}
+.border-b-warning-dark {
+  border-bottom: 0.02rem solid #ed6a0c;
+}
+.border-l-warning-dark {
+  border-left: 0.02rem solid #ed6a0c;
+}
+.border-gray {
+  border: 0.02rem solid #c8c9cc;
+}
+.border-t-gray {
+  border-top: 0.02rem solid #c8c9cc;
+}
+.border-r-gray {
+  border-right: 0.02rem solid #c8c9cc;
+}
+.border-b-gray {
+  border-bottom: 0.02rem solid #c8c9cc;
+}
+.border-l-gray {
+  border-left: 0.02rem solid #c8c9cc;
+}
+.border-gray-light {
+  border: 0.02rem solid #e5e5e5;
+}
+.border-t-gray-light {
+  border-top: 0.02rem solid #e5e5e5;
+}
+.border-r-gray-light {
+  border-right: 0.02rem solid #e5e5e5;
+}
+.border-b-gray-light {
+  border-bottom: 0.02rem solid #e5e5e5;
+}
+.border-l-gray-light {
+  border-left: 0.02rem solid #e5e5e5;
+}
+.border-gray-dark {
+  border: 0.02rem solid #969799;
+}
+.border-t-gray-dark {
+  border-top: 0.02rem solid #969799;
+}
+.border-r-gray-dark {
+  border-right: 0.02rem solid #969799;
+}
+.border-b-gray-dark {
+  border-bottom: 0.02rem solid #969799;
+}
+.border-l-gray-dark {
+  border-left: 0.02rem solid #969799;
+}
+.border-gray-darker {
+  border: 0.02rem solid #7d7e80;
+}
+.border-t-gray-darker {
+  border-top: 0.02rem solid #7d7e80;
+}
+.border-r-gray-darker {
+  border-right: 0.02rem solid #7d7e80;
+}
+.border-b-gray-darker {
+  border-bottom: 0.02rem solid #7d7e80;
+}
+.border-l-gray-darker {
+  border-left: 0.02rem solid #7d7e80;
 }
 .flex-box {
   display: flex;

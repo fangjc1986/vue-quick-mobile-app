@@ -1,17 +1,20 @@
 <template>
-    <div class="ScrollBox wh100p pos-r">
-        <van-list
-                v-model="loading"
-                @load="onLoad"
-        >
-            <slot></slot>
-        </van-list>
+    <div class="ScrollBoxBetter wh100p pos-r"
+         ref="wrapper"
+    >
+        <div class="pos-r">
+            <div class="pull-down-container"></div>
+            <div class="body van-clearfix">
+                <slot></slot>
+            </div>
+            <div class="pull-up-container"></div>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "ScrollBox",
+        name: "ScrollBoxBetter",
 
         components: {},
         props: {
@@ -45,6 +48,6 @@
 
 <style lang="less" scoped>
 
-    .ScrollBox {
+    .ScrollBoxBetter {
     }
 </style>

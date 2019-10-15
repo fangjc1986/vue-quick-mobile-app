@@ -25,7 +25,6 @@ export default {
     deactivated() {
     },
     beforeDestroy() {
-        this.deactivated();
     },
     mounted() {
 

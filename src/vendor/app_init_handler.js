@@ -5,6 +5,7 @@ import Vue from "vue"
 import RouteUtil from "../utils/RouteUtil";
 
 let initHandle = {
+    rootFont: 0,
     /**
      * 页面刚加载执行
      * 在 main.js 的第一行执行
@@ -18,7 +19,8 @@ let initHandle = {
      * 重置根字体大小
      */
     onloadHandler() {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth * setting.dpi_font_rate + 'px';
+        this.rootFont = document.documentElement.clientWidth * setting.dpi_font_rate;
+        document.documentElement.style.fontSize = this.rootFont + 'px';
     },
     /**
      * 监听窗口变化
@@ -37,5 +39,5 @@ let initHandle = {
     }
 };
 initHandle.onload();
-Vue.prototype.$route_util = RouteUtil;
+Vue.prototype.$v_router = RouteUtil;
 export default initHandle;

@@ -1,4 +1,4 @@
-import DbUtil from "../../../../utils/DbUtil";
+import Helper from "@/utils/Helper";
 
 export default {
     namespaced: true,
@@ -7,7 +7,7 @@ export default {
     },
     actions: {
         load({state, commit}) {
-            let user = DbUtil.get('user').value();
+            let user = Helper.DB.get('user').value();
             state.loginUser = user || {};
         }
     },
