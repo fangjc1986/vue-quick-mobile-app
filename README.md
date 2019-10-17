@@ -1,29 +1,15 @@
-# vue-quick-app
+# vue-quick-mobile-app 快速构建单页 web手机端单页app
 
-## Project setup
-```
-npm install
-```
+### 演示地址：
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 基础框架
+* vue.js
+* vue-router
+* vuex
+* Vant
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 功能
+* 完成最基础的单页应用页面跳转效果
+```html
 
-### Run your tests
 ```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
