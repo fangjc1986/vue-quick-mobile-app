@@ -27,6 +27,14 @@ export default class ErrorCodeHandle {
         // TODO 退出登录跳转到登录页等业务逻辑
     }
 
+    /**
+     * demo 中定义 120 为服务器返回表单错误信息
+     */
+    code120() {
+        Toast(this.ajaxUtil.response.message);
+        this.ajaxUtil.formRef.setErrorFromServer(this.ajaxUtil.response.data);
+    }
+
     // 可以继续添加错误如： code120(), code130();
 
     //表单错误处理

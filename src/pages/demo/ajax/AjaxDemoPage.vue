@@ -43,6 +43,7 @@
                             label-width="1.7rem"
                             :validator="demo4Params.validator"
                             ref="form"
+                            :result.sync="demo4Params.valRes"
                     >
                         <quick-form-item prop="mobile">
                             <quick-form-field
@@ -51,16 +52,26 @@
                                     placeholder="请输入您的手机号"
                             ></quick-form-field>
                         </quick-form-item>
+                        <quick-form-item prop="realName">
+                            <quick-form-field
+                                    v-model="demo4Params.form.realName"
+                                    label="真是姓名"
+                                    placeholder="请输入您的真是姓名"
+                            ></quick-form-field>
+                        </quick-form-item>
                     </quick-form>
                     <div class="pa-md">
                         <van-button
                                 size="small"
-                                block type="primary"
+                                type="primary"
                                 @click="demo4"
-                        >发送请求
+                                :disabled="!demo4Params.valRes"
+                                :loading="demo4Params.loading"
+                        >提交表单
                         </van-button>
                     </div>
                 </van-cell-group>
+                <div style="height: 3rem;"></div>
             </scroll-box-vant>
         </page-layout>
     </div>
@@ -99,15 +110,22 @@
                     response: '',
                 },
                 demo4Params: {
+                    loading: false,
                     validator: {
                         'mobile': [
                             {valid: (value) => /^1/.test(value) || "手机号不能为空"},
                             {valid: (value) => /^1\d{10}$/.test(value), message: "手机号格式错误"},
+                        ],
+                        'realName': [
+                            {valid: (value) => !!value.length || "真是姓名不能为空"},
+                            {valid: (value) => /^[\u4e00-\u9fa5]{1,3}$/u.test(value), message: "真是姓名格式错误"},
                         ]
                     },
                     form: {
-                        mobile: ''
-                    }
+                        mobile: '',
+                        realName: '',
+                    },
+                    valRes: true,
                 }
             }
         },
@@ -153,15 +171,23 @@
                 });
             },
             demo4() {
-                this.group();
                 let api = ['/pet_stemo/test/test_code', 'post', {
-                    code: 200,
-                    message: '表单提交成功',
-                    data: '表单提交成功',
+                    // 返回表单格式错误信息
+                    code: 120,
+                    message: '服务器让您请检查表单',
+                    data: {
+                        'mobile': '服务器说手机号格式错误！',
+                        'realName': '服务器说真是姓名错误!'
+                    },
                 }];
-                this.$ajax.request(api).then(resp => {
+                if (!this.$refs.form.checkValid()) {
+                    return Toast("请检查表单");
+                }
+                this.demo4Params.loading = true;
+                // 为让能让ajax 自动回调填充表单错误信息，把表单对象传递给ajax工具
+                this.$ajax.request(api, {}, this.$refs.form).then(resp => {
                     Toast(resp);
-                });
+                }).finally(() => this.demo4Params.loading = false);
             },
 
 
