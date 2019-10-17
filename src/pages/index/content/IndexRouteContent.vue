@@ -1,5 +1,5 @@
 <template>
-    <div class="IndexRouteContent h100p">
+    <div class="IndexRouteContent ">
         <page-layout>
             <van-nav-bar
                     title="首页"

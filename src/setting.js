@@ -6,6 +6,10 @@ const setting = {
     // 跳转过度动画
     // slide: 单边平移， slide-all: 整体平移
     page_animate_class: 'slide',
+    // ajax 是否允许模拟数据
+    ajax_mock_on: process.env.NODE_ENV !== 'production',
+    // 服务器地址
+    server_domain: 'https://stemoscope.fangjc1986.com/' ,
 };
 
 export default setting;

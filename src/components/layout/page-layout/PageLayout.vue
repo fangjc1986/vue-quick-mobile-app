@@ -1,6 +1,8 @@
 <template>
     <div class="PageLayout wh100p pos-r flex-box flex-column ">
-        <div class="flex-shrink-off">
+        <div class="flex-shrink-off"
+            v-if="$slots.head"
+        >
             <slot name="head"></slot>
         </div>
         <div class="flex-grow pos-r overflow-h">

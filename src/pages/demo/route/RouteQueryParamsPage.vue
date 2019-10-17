@@ -16,6 +16,8 @@
                     <br>
                     页面地址：使用 route 中定义的path地址(如：'/IndexPage');<br>
                     传递参数：必须使用 object 类型（如：{id: 1, name:"哈哈"} <br>
+                    <br>
+                    最终在接受页使用 this.$route.query 获取参数；
                 </div>
             </scroll-box-vant>
         </page-layout>

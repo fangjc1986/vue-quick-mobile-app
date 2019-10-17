@@ -1,0 +1,61 @@
+.slide-right-leave-active {
+  transform: translate(100%, 0);
+  z-index: 1000 !important;
+}
+.slide-left-enter {
+  transform: translate(100%, 0);
+  z-index: 1000 !important;
+}
+.slide-left-enter-active,
+.slide-left-enter-to {
+  z-index: 1000 !important;
+}
+.slide-left-leave-active {
+  z-index: 0;
+}
+.slide-all-right-leave,
+.slide-all-right-leave-active,
+.slide-all-left-enter {
+  transform: translate(130%, 0);
+}
+.slide-all-right-enter,
+.slide-all-left-leave,
+.slide-all-left-leave-active {
+  transform: translate(-130%, 0);
+}
+.page-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+.route-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-from-right-100p-enter-active,
+.fade-from-right-100p-leave-active {
+  transition: 0.5s;
+}
+.fade-from-right-100p-enter,
+.fade-from-right-100p-leave-to {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+/*# sourceMappingURL=animate.css.map */

@@ -1,5 +1,7 @@
 <template>
-    <div class="ScrollBoxVant h100p pos-r">
+    <div class="ScrollBoxVant pos-r overflow-h"
+         style="height: 100%;"
+    >
         <van-pull-refresh
                 v-model="pullDownLoading"
                 @refresh="pullDownEvent"
@@ -26,8 +28,9 @@
                     ref="list"
                     class="h100p pos-r"
                     :immediate-check="false"
+                    :finished-text="pullUp? '没有更多咯...' : ''"
             >
-                <div class="pos-r h100p">
+                <div class="pos-r h100p van-clearfix">
                     <slot></slot>
                 </div>
             </van-list>
@@ -36,6 +39,7 @@
         </van-pull-refresh>
         <transition name="fade-from-right-100p">
             <scroll-to-top-button
+                    :pos-style="toTopPosStyle"
                     v-if="showToTop && showToTopButton "
                     @click.native="clickToTopButton"
             ></scroll-to-top-button>
@@ -61,7 +65,8 @@
         mixins: [PageMixin],
         components: {
             ScrollPullDownLoading,
-            ScrollPullDownLoosing, ScrollPullDownPulling, ScrollPullDownContainer, ScrollToTopButton},
+            ScrollPullDownLoosing, ScrollPullDownPulling, ScrollPullDownContainer, ScrollToTopButton
+        },
         props: {
             pullDown: {
                 default: false,
@@ -139,21 +144,26 @@
             },
             /**
              * 点击回到顶部
-             * 模拟简单对数上升
              */
             clickToTopButton() {
-                let scroll = () => {
-                    let top = this.$refs.list.scroller.scrollTop / 1.2;
-                    if (top > 2) {
-                        this.$refs.list.scroller.scrollTo(0, top);
-                        setTimeout(() => {
-                            scroll()
-                        }, 10);
-                    } else {
-                        this.$refs.list.scroller.scrollTo(0, 0);
-                    }
-                };
-                scroll();
+                this.scrollTo(0);
+            },
+
+            /**
+             * 模拟简单的 ease 效果
+             * @param y
+             */
+            scrollTo(y = 0) {
+                let c = (this.$refs.list.scroller.scrollTop - y) / 1.2;
+                let top = y + c;
+                if (c > 2) {
+                    this.$refs.list.scroller.scrollTo(0, top);
+                    setTimeout(() => {
+                        this.scrollTo(y)
+                    }, 10);
+                } else {
+                    this.$refs.list.scroller.scrollTo(0, y);
+                }
             }
         },
 

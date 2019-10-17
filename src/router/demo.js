@@ -42,5 +42,21 @@ export default [
         }
     },
 
+    // 布局
+    {
+        path: '/layout/LayoutDemoPage',
+        component: _import('demo/layout/LayoutDemoPage.vue'),
+        meta: {
+            title: '整体布局Demo'
+        }
+    },
+    // ajax
+    {
+        path: '/ajax/AjaxDemoPage',
+        component: _import('demo/ajax/AjaxDemoPage.vue'),
+        meta: {
+            title: 'ajax完整演示demo'
+        }
+    },
 
 ]

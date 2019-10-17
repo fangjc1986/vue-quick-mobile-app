@@ -44,6 +44,7 @@ export default class PaginateUtil {
     /**
      * 返回服务器使用的分页字段
      * 将本地分页格式转换成 服务器需要分分页对象格式
+     * 用于 ajax 请求的时候使用
      * @returns {{pageSize: number, page: number}}
      */
     getJSON() {
@@ -73,7 +74,7 @@ export default class PaginateUtil {
      * 完成数据列表刷新，重置scrollBox状态
      * 根据返回数据多少判断是否还有下一页数据
      * 此处使用 debounce 延迟加载，防止连续多次触发
-     * 等待vue将数据绚烂到页面
+     * 等待vue将数据渲染到页面
      * @param resp
      */
     finishLoading(resp = null) {

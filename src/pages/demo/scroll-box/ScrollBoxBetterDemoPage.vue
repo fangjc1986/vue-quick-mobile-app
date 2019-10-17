@@ -11,6 +11,7 @@
                     :pull-down="true"
                     :pull-up="true"
                     :paginate="paginate"
+                    :show-to-top="true"
             >
                 <van-cell
                         v-for="(item,i) in data"

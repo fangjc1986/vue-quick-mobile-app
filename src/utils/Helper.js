@@ -41,6 +41,17 @@ export default {
      */
     rem2Px(rem, suffix = 'px') {
         return rem * (document.documentElement.clientWidth * setting.dpi_font_rate) + suffix;
-    }
+    },
+
+    /**
+     * 375 分辨率下的 px 转换成当前分辨率下的 px
+     * @param px
+     * @param suffix
+     * @returns {string}
+     */
+    px2Px(px, suffix = 'px') {
+        return this.rem2Px(this.px2Rem(px, '') * 1, '') + suffix;
+    },
+
 
 }
