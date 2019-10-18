@@ -28,10 +28,14 @@ export default class ErrorCodeHandle {
     }
 
     /**
-     * demo 中定义 120 为服务器返回表单错误信息
+     * 自定义错误 120
+     * 本 Demo 用于处理 ajax封装 Demo 中的 表单验证错误回调
      */
     code120() {
         Toast(this.ajaxUtil.response.message);
+        // formRef 为在调用 ajaxUtil 时传递过来的 QuickForm 对象，
+        // 在 QuickForm 对象下面定义了来自服务器错误的处理方法；
+        // 因此将返回的错误信息直接 交给 QuickForm 的方法进行处理；
         this.ajaxUtil.formRef.setErrorFromServer(this.ajaxUtil.response.data);
     }
 

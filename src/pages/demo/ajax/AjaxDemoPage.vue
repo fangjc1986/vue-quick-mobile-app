@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </van-cell-group>
-                <van-cell-group title="参数提交并返回错误 demo3">
+                <van-cell-group title="以form-data参数提交并返回错误 demo3">
                     <div class="pa-md">
                         <van-button size="small" type="primary" @click="demo3">发送请求</van-button>
                         <div class="pt-md">
@@ -111,6 +111,7 @@
                 },
                 demo4Params: {
                     loading: false,
+                    // 验证器
                     validator: {
                         'mobile': [
                             {valid: (value) => /^1/.test(value) || "手机号不能为空"},
@@ -145,6 +146,9 @@
                 let mockData = {
                     'code': 200,
                     'message': '123123',
+                    // mock.js 写法
+                    // 生成 data 数组长度为 3 ， 内容为随机 10 位 小写字母；
+                    // ajax 工具会自动对 整个 mockData 做 mock.js 处理；
                     'data|3': ["@string('lower',10)"]
                 };
                 let api = ['/demo1', 'get', mockData];
@@ -162,7 +166,7 @@
             },
             demo3() {
                 let api = ['/pet_stemo/test/test_code', 'get'];
-                this.$ajax.request(api, {
+                this.$ajax.requestFormData(api, {
                     code: 100
                 }).then(resp => {
                     this.demo3Params.response = resp;
@@ -185,6 +189,11 @@
                 }
                 this.demo4Params.loading = true;
                 // 为让能让ajax 自动回调填充表单错误信息，把表单对象传递给ajax工具
+                // 由于返回模拟的 code 为 120
+                // 因此在数据返回后 ErrorCodeHandler.code120() 函数将被执行；
+                // 如果没有资格函数工具将跳过执行
+                // 需要处理则执行添加 code120 函数并进行处理
+                // demo 中已经添加的处理方法。
                 this.$ajax.request(api, {}, this.$refs.form).then(resp => {
                     Toast(resp);
                 }).finally(() => this.demo4Params.loading = false);

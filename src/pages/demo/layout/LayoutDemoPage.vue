@@ -37,10 +37,11 @@
     import PageLayout from "@/components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "@/components/scroll-box/ScrollBoxVant";
     import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
+    import ReloadMixin from "@/vendor/mixin/ReloadMixin";
 
     export default {
         name: "LayoutDemoPage",
-        mixins: [],
+        mixins: [ReloadMixin],
         components: {ScrollBoxBetter, ScrollBoxVant, PageLayout},
         props: {},
         data() {
