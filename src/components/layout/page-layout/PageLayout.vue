@@ -1,15 +1,20 @@
 <template>
-    <div class="PageLayout wh100p pos-r flex-box flex-column overflow-h">
+    <div class="PageLayout flex-box flex-column wh100p pos-r overflow-h">
         <div class="flex-shrink-off"
-            v-if="$slots.head"
+             ref="head"
+             v-if="$slots.head"
         >
             <slot name="head"></slot>
         </div>
-        <div class="flex-grow pos-r overflow-h">
+        <div class="flex-grow pos-r overflow-h"
+             :style="bodyStyle"
+             ref="body"
+        >
             <slot></slot>
         </div>
         <div class="flex-shrink-off"
-            v-if="$slots.foot"
+             ref="foot"
+             v-if="$slots.foot"
         >
             <slot name="foot"></slot>
         </div>
@@ -21,15 +26,27 @@
         name: "PageLayout",
         mixins: [],
         components: {},
-        props: {
-
-        },
+        props: {},
         data() {
-            return {}
+            return {
+                bodyHeight: 0,
+            }
         },
-        computed: {},
+        computed: {
+            bodyStyle() {
+                return {
+                    height: this.bodyHeight + 'px',
+                }
+            }
+        },
         watch: {},
         mounted() {
+            //this.$nextTick(()=>{
+            //    let headHeight = this.$refs.head ? this.$refs.head.offsetHeight : 0;
+            //    let footHeight = this.$refs.foot ? this.$refs.foot.offsetHeight : 0;
+            //    this.bodyHeight = document.body.clientHeight - headHeight - footHeight;
+            //}, 1000);
+            this.bodyHeight = this.$refs.body.offsetHeight;
         },
         created() {
         },

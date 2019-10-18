@@ -46,9 +46,5 @@
     @import "~@/assets/css/animate";
     @import "~@/assets/css/reset";
 
-    #app{
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-    }
+
 </style>

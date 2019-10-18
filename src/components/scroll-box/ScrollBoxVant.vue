@@ -1,13 +1,14 @@
 <template>
     <div class="ScrollBoxVant pos-r overflow-h"
          style="height: 100%;"
+         ref="wrapper"
     >
         <van-pull-refresh
                 v-model="pullDownLoading"
                 @refresh="pullDownEvent"
                 :disabled="!pullDown"
                 class="h100p pos-r"
-                style="overflow:scroll ;"
+                style="overflow:scroll;"
         >
             <!-- 顶部插槽 -->
             <scroll-pull-down-container slot="pulling">
