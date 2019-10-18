@@ -1,7 +1,6 @@
 <template>
     <div class="IndexPage ">
         <page-layout>
-
             <van-tabbar
                     :fixed="false"
                     v-model="active"
@@ -14,7 +13,7 @@
             </van-tabbar>
 
             <keep-alive >
-                <component :is="cst.components[active]" class="h100p"></component>
+                <component :is="cst.components[active]" class="wh100p overflow-h"></component>
             </keep-alive>
         </page-layout>
     </div>

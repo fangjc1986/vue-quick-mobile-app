@@ -3,7 +3,8 @@ import LocalStorage from 'lowdb/adapters/LocalStorage'
 import setting from "../setting";
 
 const Mock = require('mockjs');
-
+const uuidv1 = require('uuid/v1');
+const dayjs = require('dayjs');
 const adapter = new LocalStorage(`${setting.package.name}-${setting.package.version}`);
 let db = low(adapter);
 
@@ -53,5 +54,17 @@ export default {
         return this.rem2Px(this.px2Rem(px, '') * 1, '') + suffix;
     },
 
-
+    /**
+     * uuid 随机
+     */
+    uuid() {
+        return uuidv1();
+    },
+    /**
+     * 日期工具
+     * @returns {((date?: dayjs.ConfigType, option?: dayjs.OptionType, locale?: string) => dayjs.Dayjs) | dayjs}
+     */
+    dayjs(val = null) {
+        return !val ? dayjs() : dayjs(val);
+    },
 }

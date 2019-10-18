@@ -1,5 +1,5 @@
 <template>
-    <div class="IndexRouteContent ">
+    <div class="IndexRouteContent wh100p overflow-h">
         <page-layout>
             <van-nav-bar
                     title="首页"
@@ -18,6 +18,10 @@
                     <van-cell :is-link="true"
                               @click="v_router.to('/route/RouteForceBackPage', demo1)"
                     >返回不显示（返回载入后强制再次返回）
+                    </van-cell>
+                    <van-cell :is-link="true"
+                              @click="v_router.to('/route/RouteBackTaskPage')"
+                    >返回处理代办事项
                     </van-cell>
                 </van-cell-group>
 
@@ -51,7 +55,6 @@
                     resetOther: 是否重置其他的返回选项;<br>
 
                 </div>
-
             </scroll-box-vant>
         </page-layout>
     </div>

@@ -1,4 +1,4 @@
-import './vendor/app_init_handler'
+import Init from './vendor/app_init_handler'
 import Vue from 'vue'
 import App from './App.vue'
 import Vant from 'vant'
@@ -8,6 +8,7 @@ import router from './router'
 import store from './store'
 import store_vendor from "./vendor/store_vendor";
 import route_vendor from "./vendor/route_vendor";
+import AppNativeUtil from "@/utils/AppNativeUtil";
 
 Vue.use(Vant);
 Vue.mixin(VueMixin);
@@ -22,5 +23,9 @@ new Vue({
     created() {
         store_vendor.store = this.$store;
         route_vendor.router = this.$router;
+        Init.resetRootFont();
+        AppNativeUtil.init();
+    },
+    mounted() {
     }
 }).$mount('#app');

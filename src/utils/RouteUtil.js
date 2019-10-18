@@ -1,4 +1,5 @@
 import route_vendor from "../vendor/route_vendor";
+import BackTaskListUtil from "@/utils/BackTaskListUtil";
 
 export default {
     /**
@@ -30,6 +31,7 @@ export default {
      * 返回上一个页面
      */
     back() {
+        if( !window.plus) BackTaskListUtil.runAllTask();
         window.history.go(-1);
     },
     /**

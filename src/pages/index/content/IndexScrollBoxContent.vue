@@ -1,5 +1,5 @@
 <template>
-    <div class="IndexScrollBoxContent ">
+    <div class="IndexScrollBoxContent">
         <page-layout>
             <van-nav-bar
                     title="无限滚动"

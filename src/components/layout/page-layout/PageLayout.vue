@@ -1,5 +1,5 @@
 <template>
-    <div class="PageLayout wh100p pos-r flex-box flex-column ">
+    <div class="PageLayout wh100p pos-r flex-box flex-column overflow-h">
         <div class="flex-shrink-off"
             v-if="$slots.head"
         >

@@ -1,27 +1,16 @@
 import setting from "../setting";
-import AppNativeUtil from "../utils/AppNativeUtil";
 import route_vendor from "./route_vendor";
 import Vue from "vue"
 import RouteUtil from "../utils/RouteUtil";
 import AjaxUtil from "@/utils/AjaxUtil";
+import BackTaskListUtil from "@/utils/BackTaskListUtil";
 
-/**
- * 重置根字体大小
- */
-const resetRootFont = () => {
-    let rootFont = document.documentElement.clientWidth * setting.dpi_font_rate;
-    document.documentElement.style.fontSize = rootFont + 'px';
-};
-resetRootFont();
-/**
- * 监听窗口变化
- */
-window.onresize = resetRootFont;
+
 /**
  * 监听浏览器返回事件
  */
 window.addEventListener("popstate", () => {
-    if (!window.plus) AppNativeUtil.invokeAllEvent();
+    if (!window.plus) BackTaskListUtil.runAllTask();
     route_vendor.setBackAnimate();
 }, false);
 /**
@@ -31,3 +20,22 @@ window.addEventListener("popstate", () => {
 Vue.prototype.$v_router = RouteUtil;
 
 Vue.prototype.$ajax = AjaxUtil;
+
+const init = {
+    /**
+     * 重置根字体大小
+     */
+    resetRootFont() {
+        let rootFont = document.documentElement.clientWidth * setting.dpi_font_rate;
+        setTimeout(() => {
+            document.documentElement.style.fontSize = rootFont + 'px';
+        });
+    },
+};
+/**
+ * 监听窗口变化
+ */
+window.onresize = init.resetRootFont;
+init.resetRootFont();
+
+export default init;

@@ -26,6 +26,13 @@ export default [
             title: '强制返回跳过'
         }
     },
+    {
+        path: '/route/RouteBackTaskPage',
+        component: _import('demo/route/RouteBackTaskPage.vue'),
+        meta: {
+            title: '返回处理代办事项'
+        }
+    },
     // 无限滚动页面
     {
         path: '/scrollBox/ScrollBoxVantDemoPage',
