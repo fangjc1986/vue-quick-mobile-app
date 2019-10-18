@@ -2,7 +2,10 @@
 
 ### 演示地址：
 
-[http://]sdfsdfdsfsfdfs
+[http://vqma.demo.fangjc1986.com]http://vqma.demo.fangjc1986.com
+
+目前在 手机端 微信浏览器和手机浏览器中完美运行，其他浏览器尚未测试；
+
 ### 基础框架
 * vue.js
 * vue-router

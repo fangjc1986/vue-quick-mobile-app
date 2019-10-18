@@ -102,7 +102,7 @@
                         right: true
                     } : false,
                     click: true,
-                    tap:true,
+                    tap: true,
                     swipeBounceTime: 100,
                     //deceleration: 0.002,
                 },
@@ -121,6 +121,14 @@
                 this.options.pullDownRefresh.stop = this.options.pullDownRefresh.threshold;
             }
             this.initScroll();
+        },
+        activated() {
+            if (this.scroll) {
+                console.log(111);
+                this.$nextTick(() => {
+                    this.scroll.refresh();
+                });
+            }
         },
         methods: {
             reload() {
