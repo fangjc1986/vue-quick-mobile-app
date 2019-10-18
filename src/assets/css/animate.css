@@ -1,9 +1,9 @@
 .slide-right-leave-active {
-  transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
   z-index: 1000 !important;
 }
 .slide-left-enter {
-  transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
   z-index: 1000 !important;
 }
 .slide-left-enter-active,
@@ -16,12 +16,12 @@
 .slide-all-right-leave,
 .slide-all-right-leave-active,
 .slide-all-left-enter {
-  transform: translate(130%, 0);
+  transform: translate3d(130%, 0, 0);
 }
 .slide-all-right-enter,
 .slide-all-left-leave,
 .slide-all-left-leave-active {
-  transform: translate(-130%, 0);
+  transform: translate3d(-130%, 0, 0);
 }
 .page-view {
   position: absolute;
@@ -44,18 +44,22 @@
 .fade-enter-active,
 .fade-leave-active {
   transition: 0.5s;
+  transform: translateZ(0);
 }
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+  transform: translateZ(0);
 }
 .fade-from-right-100p-enter-active,
 .fade-from-right-100p-leave-active {
   transition: 0.5s;
+  transform: translateZ(0);
 }
 .fade-from-right-100p-enter,
 .fade-from-right-100p-leave-to {
   opacity: 0;
   transform: translate(100%, 0);
+  transform: translateZ(0);
 }
 /*# sourceMappingURL=animate.css.map */

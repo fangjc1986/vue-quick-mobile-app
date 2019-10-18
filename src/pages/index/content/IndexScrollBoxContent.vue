@@ -5,7 +5,7 @@
                     title="无限滚动"
                     slot="head"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <van-cell-group title="无限滚动">
                     <van-cell
                             title="无限滚动 Demo 演示（Vant）"
@@ -66,7 +66,7 @@
                     resp: 服务器返回的分页对象（如：{page:2,pageSize:20, list: []}）<br>
                     如字段名称与本地定义名称不一致可在 util/PaginateUtil 中修改 convertJSON 函数和 getJSON 函数来转换字段； <br>
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -75,11 +75,12 @@
     import PageLayout from "../../../components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "../../../components/scroll-box/ScrollBoxVant";
     import CellGroupTitles from "../../../components/titles/CellGroupTitles";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "IndexScrollBoxContent",
         mixins: [],
-        components: {CellGroupTitles, ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, CellGroupTitles, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {}

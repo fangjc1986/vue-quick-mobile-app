@@ -6,7 +6,7 @@
                     title="整体布局组件"
                     slot="head"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <van-cell-group title="页面布局">
                     <van-cell
                             title="整体布局Demo"
@@ -30,7 +30,7 @@
                     <br>
                     在没有添加 head 和 foot 插槽的情况下，将不会渲染 对应的 head、foot容器元素；<br>
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -38,11 +38,12 @@
 <script>
     import PageLayout from "@/components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "@/components/scroll-box/ScrollBoxVant";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "IndexPageLayoutContent",
         mixins: [],
-        components: {ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {}

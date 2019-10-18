@@ -7,7 +7,7 @@
                     left-arrow
                     @click-left="v_router.back()"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <div class="pa-md">
 
                     <van-button
@@ -48,7 +48,7 @@
                         代办事项uuid列表：{{ demo2TaskName }}
                     </div>
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -59,11 +59,12 @@
     import DialogUtil from "@/utils/DialogUtil";
     import BackTaskListUtil from "@/utils/BackTaskListUtil";
     import ReloadMixin from "@/vendor/mixin/ReloadMixin";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "RouteBackTaskPage",
         mixins: [ReloadMixin],
-        components: {ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {

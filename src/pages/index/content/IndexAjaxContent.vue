@@ -5,7 +5,7 @@
                     slot="head"
                     title="ajax封装"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <van-cell-group title="ajax封装">
                     <van-cell
                             title="完整演示 Demo"
@@ -42,7 +42,7 @@
                     其他内容可参考demo + 源码；
 
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -50,11 +50,12 @@
 <script>
     import PageLayout from "@/components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "@/components/scroll-box/ScrollBoxVant";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "IndexAjaxContent",
         mixins: [],
-        components: {ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {}

@@ -6,7 +6,7 @@
                     :left-arrow="true"
                     @click-left="v_router.back()"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <cell-group-titles>收到参数：</cell-group-titles>
                 <div class="pa-md">{{ params }}</div>
                 <div class="pa-md color-gray-darker">
@@ -19,7 +19,7 @@
                     <br>
                     最终在接受页使用 this.$route.query 获取参数；
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -28,11 +28,12 @@
     import PageLayout from "../../../components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "../../../components/scroll-box/ScrollBoxVant";
     import CellGroupTitles from "../../../components/titles/CellGroupTitles";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "RouteQueryParamsPage",
         mixins: [],
-        components: {CellGroupTitles, ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, CellGroupTitles, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {}

@@ -7,7 +7,7 @@
                     title="带参数返回并执行函数"
                     @click-left="v_router.back()"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <cell-group-titles>返回文本信息到上一页</cell-group-titles>
                 <van-field v-model="demo1" placeholder="请输入返回信息">
                     <van-button
@@ -37,7 +37,7 @@
                     事件名称：返回到上一页的 method 中的方法名；<br>
                     是否重置参数：是否将除了本次设置以外的其他返回路由参数重置；（默认不重置）；<br>
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -46,11 +46,12 @@
     import PageLayout from "../../../components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "../../../components/scroll-box/ScrollBoxVant";
     import CellGroupTitles from "../../../components/titles/CellGroupTitles";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "RouteBackParams",
         mixins: [],
-        components: {CellGroupTitles, ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, CellGroupTitles, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {

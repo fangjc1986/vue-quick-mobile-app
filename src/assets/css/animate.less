@@ -1,11 +1,11 @@
 // 页面切换 - 单边切换
 .slide-right-leave-active {
-  transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
   z-index: 1000 !important;
 }
 
 .slide-left-enter {
-  transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
   z-index: 1000 !important;
 }
 
@@ -22,13 +22,13 @@
 .slide-all-right-leave,
 .slide-all-right-leave-active,
 .slide-all-left-enter {
-  transform: translate(130%, 0);
+  transform: translate3d(130%, 0, 0);
 }
 
 .slide-all-right-enter,
 .slide-all-left-leave,
 .slide-all-left-leave-active {
-  transform: translate(-130%, 0);
+  transform: translate3d(-130%, 0, 0);
 }
 
 // 路由过度动画容器
@@ -60,16 +60,19 @@
 .animate(@name, @cls, @t : 0.5s ) {
   .@{name}-enter-active, .@{name}-leave-active {
     transition: @t;
+    transform: translateZ(0);
   }
   .@{name}-enter, .@{name}-leave-to /* .fade-leave-active below version 2.1.8 */ {
     @cls();
+    transform: translateZ(0);
   }
 }
+
 // 淡入淡出
-.animate(fade,{
-    opacity:0;
+.animate(fade, {
+  opacity: 0;
 });
-.animate(fade-from-right-100p,{
-    opacity: 0;
-    transform: translate(100%, 0);
+.animate(fade-from-right-100p, {
+  opacity: 0;
+  transform: translate(100%, 0);
 });

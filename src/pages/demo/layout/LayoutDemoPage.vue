@@ -12,7 +12,7 @@
                  slot="foot"
                 style="height: 2rem;"
             >foot 插槽</div>
-            <scroll-box-vant
+            <scroll-box-better
                 class="bg-gray-light"
             >
                 <div class="ma-md">
@@ -28,7 +28,7 @@
                     整个布局使用 flex 纵向布局， 其中 default 插槽容器为 grow:1 （自动填满剩余高度） ；<br>
                     head 和 foot 使用 shrink: 0 （不会缩小）
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>

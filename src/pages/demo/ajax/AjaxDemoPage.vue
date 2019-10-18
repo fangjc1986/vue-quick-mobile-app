@@ -7,7 +7,7 @@
                     title="ajax演示Demo"
                     @click-left="v_router.back()"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <van-cell-group title="模拟随机数据返回 demo1">
                     <div class="pa-md">
                         <van-button size="small" type="primary" @click="demo1"
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </van-cell-group>
-                <van-cell-group title="以form-data参数提交并返回错误 demo3">
+                <van-cell-group title="以参数提交并返回错误 demo3">
                     <div class="pa-md">
                         <van-button size="small" type="primary" @click="demo3">发送请求</van-button>
                         <div class="pt-md">
@@ -72,7 +72,7 @@
                     </div>
                 </van-cell-group>
                 <div style="height: 3rem;"></div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -85,11 +85,12 @@
     import QuickFormField from "@/components/form/QuickFormField";
     import Toast from "vant/lib/toast";
     import Helper from "@/utils/Helper";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "AjaxDemoPage",
         mixins: [],
-        components: {QuickFormField, QuickForm, QuickFormItem, ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, QuickFormField, QuickForm, QuickFormItem, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {
@@ -166,7 +167,7 @@
             },
             demo3() {
                 let api = ['/pet_stemo/test/test_code', 'get'];
-                this.$ajax.requestFormData(api, {
+                this.$ajax.request(api, {
                     code: 100
                 }).then(resp => {
                     this.demo3Params.response = resp;

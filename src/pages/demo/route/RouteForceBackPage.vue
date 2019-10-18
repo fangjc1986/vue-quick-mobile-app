@@ -6,7 +6,7 @@
                     :left-arrow="true"
                     @click-left="v_router.back()"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <cell-group-titles>跳转</cell-group-titles>
                 <van-cell
                         title="跳转下一页"
@@ -25,7 +25,7 @@
                     返回跳过本页： p_force_back = true (默认false) <br>
                     返回重置事件： p_force_back_reset_route = true (默认false) <br>
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -35,11 +35,12 @@
     import ScrollBoxVant from "../../../components/scroll-box/ScrollBoxVant";
     import CellGroupTitles from "../../../components/titles/CellGroupTitles";
     import ReloadMixin from "../../../vendor/mixin/ReloadMixin";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "RouteForceBackPage",
         mixins: [ReloadMixin],
-        components: {CellGroupTitles, ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, CellGroupTitles, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {

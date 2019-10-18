@@ -5,7 +5,7 @@
                     title="首页"
                     slot="head"
             ></van-nav-bar>
-            <scroll-box-vant>
+            <scroll-box-better>
                 <van-cell-group title="路由">
                     <van-cell :is-link="true"
                               @click="v_router.to('/route/RouteBackParamsPage')"
@@ -55,7 +55,7 @@
                     resetOther: 是否重置其他的返回选项;<br>
 
                 </div>
-            </scroll-box-vant>
+            </scroll-box-better>
         </page-layout>
     </div>
 </template>
@@ -64,11 +64,12 @@
     import PageLayout from "../../../components/layout/page-layout/PageLayout";
     import ScrollBoxVant from "../../../components/scroll-box/ScrollBoxVant";
     import ReloadMixin from "../../../vendor/mixin/ReloadMixin";
+    import ScrollBoxBetter from "@/components/scroll-box/ScrollBoxBetter";
 
     export default {
         name: "IndexRouteContent",
         mixins: [ReloadMixin],
-        components: {ScrollBoxVant, PageLayout},
+        components: {ScrollBoxBetter, ScrollBoxVant, PageLayout},
         props: {},
         data() {
             return {
