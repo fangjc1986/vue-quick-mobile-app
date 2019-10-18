@@ -110,6 +110,77 @@ ajax 封装了几乎所有的业务需求，可以快速开发；
 </script>
 ```
 
+* 返回代办事项
+
+用户经常会在页面上打开多个提示窗口，在单页应用上，如果用户点击返回按钮，则强制浏览器返回到上一页，再次情况下，
+提示窗口不会自动消失, 需要将提示窗口的关闭回调函数添加到 `BackTaskUtil` 中；
+
+在 `浏览器` 环境下返回动作将会自动执行代办队列中的所有回调函数；
+
+在 `native.js` 环境下由于可以监听和拦截 返回按钮 `window.plus.key.addEventListener('backbutton')`
+因此返回事件将以此执行 代办队列中的函数；
+
+> Vant 的 Dialog.alert 函数封装为关闭代办
+```javascript
+    /**
+     * alert 封装
+     * 可以以同样的方式封装 confirm 等
+     * @param option
+     * @returns {Promise<void>}
+     */
+    alert(option = {}) {
+        let uuid = 'dialog_alert_uuid';
+        // 添加到代办列表
+        // 如弹窗后点击返回按钮则执行代办事项
+        BackTaskListUtil.pushTaskUuid({
+            uuid: uuid,
+            callback: () => {
+                Dialog.close();
+            }
+        });
+        return Dialog.alert(option).then(() => {
+            // 拦截成功事件
+            // 从代表列表删除关闭弹窗代办事件
+            BackTaskListUtil.removeTaskUuid(uuid);
+            return Promise.resolve();
+        });
+    }
+```
+
+> 自定义代办队列：
+
+```javascript
+/**
+ * 添加代办事件
+ * 这里是为了演示在手机 native.js 环境下的效果
+ * 一般情况下 代办事件不应该为弹出对话框，而恰恰应该是关闭对话框；
+ */
+demo2Add() {
+    let index = this.taskIndex++;
+    BackTaskListUtil.pushTask(() => {
+        DialogUtil.alert({
+            title: '执行待办事项',
+            message: `代办事项${index}`
+        });
+    });
+    this.demo2TaskName = BackTaskListUtil.taskList.map(x => x.uuid);
+},
+/**
+ * 执行返回事件，
+ * 在手机浏览器端由于无法拦截返回按钮，因此会直接完成所有代办
+ * 在手机APP端（native.js有效）的情况下，将监听 返回按钮 并以此完成代办事件
+ * demo2 只是为了演示在手机上的效果，在 native.js 中只需直接调用 $v_router.back()即可，无需再做其他处理
+ */
+demo2() {
+    if (!BackTaskListUtil.runLastTask()) {
+        this.$v_router.back();
+    }
+    this.demo2TaskName = BackTaskListUtil.taskList.map(x => x.uuid);
+}
+
+```
+
+
 * 无限滚动
 
  无限滚动提供两个组件：`ScrollBoxVant` 和 `ScrollBoxBetter`；
