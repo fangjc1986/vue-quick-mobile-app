@@ -48,7 +48,7 @@ ajax 封装了几乎所有的业务需求，可以快速开发；
 ```html
 <template>
     <div class="RouteBackParams">
-        <button @click=$v_router.to('/BPage')"></button>
+        <button @click="$v_router.to('/BPage')"></button>
     </div>
 </template>
 
@@ -87,11 +87,11 @@ ajax 封装了几乎所有的业务需求，可以快速开发；
 <template>
     <div class="RouteBackParams">
         <!-- 返回调用 reload 函数-->
-        <button @click=$v_router.backRefresh()"></button>
+        <button @click="$v_router.backRefresh()"></button>
         <!-- 返回事件，默认调用 backEvent 函数-->
-        <button @click=$v_router.backEvent()"></button>
+        <button @click="$v_router.backEvent()"></button>
         <!-- 返回事件, 默认调用上一页的 customEvent 事件，并传参 {res:'good'}, 参数可以是任意格式 -->
-        <button @click=$v_router.backEvent('customEvent', {res:'good'})"></button>
+        <button @click="$v_router.backEvent('customEvent', {res:'good'})"></button>
     </div>
 </template>
 
@@ -335,7 +335,7 @@ Demo 中 `ajax封装演示` 里面的最后一个做了详细演示；
                     loading: false,
                     validator: {
                         'mobile': [
-                            {valid: (value) => /^1/.test(value) || "手机号不能为空"},
+                            {valid: (value) => !!value.length || "手机号不能为空"},
                             {valid: (value) => /^1\d{10}$/.test(value), message: "手机号格式错误"},
                         ],
                         'realName': [
@@ -411,7 +411,6 @@ Demo 中 `ajax封装演示` 里面的最后一个做了详细演示；
                     Toast(resp);
                 }).finally(() => this.demo4Params.loading = false);
             },
-
 
         }
 
