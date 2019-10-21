@@ -112,7 +112,7 @@
             this.$nextTick(() => {
                 if (this.v_route_status.isBack) {
                     // 当页面返回到此页，自动滚动到离开时的位置
-                    this.$refs.list.scroller.scrollTo(0, this.lastScrollTop);
+                    this.$refs.list.scroller.scroll(0, this.lastScrollTop);
                 }
             })
         },
@@ -158,12 +158,12 @@
                 let c = (this.$refs.list.scroller.scrollTop - y) / 1.2;
                 let top = y + c;
                 if (c > 2) {
-                    this.$refs.list.scroller.scrollTo(0, top);
+                    this.$refs.list.scroller.scroll(0, top);
                     setTimeout(() => {
                         this.scrollTo(y)
                     }, 10);
                 } else {
-                    this.$refs.list.scroller.scrollTo(0, y);
+                    this.$refs.list.scroller.scroll(0, y);
                 }
             }
         },

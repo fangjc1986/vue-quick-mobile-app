@@ -27,9 +27,11 @@ const init = {
      */
     resetRootFont() {
         let rootFont = document.documentElement.clientWidth * setting.dpi_font_rate;
-        setTimeout(() => {
-            document.documentElement.style.fontSize = rootFont + 'px';
-        });
+        document.documentElement.style.fontSize = rootFont + 'px';
+
+        //setTimeout(() => {
+        //    document.documentElement.style.fontSize = rootFont + 'px';
+        //});
     },
 };
 /**

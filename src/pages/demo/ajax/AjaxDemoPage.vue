@@ -115,7 +115,7 @@
                     // 验证器
                     validator: {
                         'mobile': [
-                            {valid: (value) => /^1/.test(value) || "手机号不能为空"},
+                            {valid: (value) => !!value.length || "手机号不能为空"},
                             {valid: (value) => /^1\d{10}$/.test(value), message: "手机号格式错误"},
                         ],
                         'realName': [

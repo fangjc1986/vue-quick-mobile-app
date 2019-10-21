@@ -124,7 +124,6 @@
         },
         activated() {
             if (this.scroll) {
-                console.log(111);
                 this.$nextTick(() => {
                     this.scroll.refresh();
                 });
