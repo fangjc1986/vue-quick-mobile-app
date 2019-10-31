@@ -264,6 +264,7 @@ export default class AjaxUtil {
     _urlFormat() {
         let query = this._urlEncode((this._data));
         this._option.url = this._api.url;
+        this._option.method = this._api.method;
         if (this._option.method === 'get') {
             this._option.url += '?' + query;
         }
