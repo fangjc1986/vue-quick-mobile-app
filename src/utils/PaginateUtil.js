@@ -79,8 +79,8 @@ export default class PaginateUtil {
      */
     finishLoading(resp = null) {
         DebThrUtil.debounce('PaginateUtil.finishLoading', () => {
-            if (!resp || resp.length < 1) {
-                this.scrollBox.finishLoading(true);
+            if (!resp) {
+                return this.scrollBox.finishLoading(true);
             }
             this.convertJSON(resp);
             let noMore = !(this.list && this.list.length >= this.pageSize);
